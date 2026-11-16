@@ -6,5 +6,6 @@ __pycache__/
 artifacts/
 data/*.csv
 data/*.json
+!data/latest.json
 !data/.gitkeep
 .DS_Store

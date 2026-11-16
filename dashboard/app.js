@@ -9,7 +9,7 @@ const C={pm2_5:"#59d6b5",pm10:"#72a9fa",nitrogen_dioxide:"#f7bd70",ozone:"#bf9cf
 const labels={pm2_5:"PM2.5",pm10:"PM10",nitrogen_dioxide:"NO₂",ozone:"O₃"};
 const pollutants=Object.keys(C);let air=null,weather=null,plots={},map=null;
 const $=id=>document.getElementById(id);
-const n=v=>Number.isFinite(Number(v))?Number(v):null;
+const n=v=>(v===null||v===undefined||v==="")?null:(Number.isFinite(Number(v))?Number(v):null);
 const local=(iso,opts={})=>new Intl.DateTimeFormat("en-GB",{timeZone:ZONE,...opts}).format(new Date(iso.endsWith("Z")?iso:iso+"Z"));
 const timeKey=iso=>iso.slice(0,16); // API timezone GMT returns UTC without Z
 function currentCutoff(){return Date.now()}
